@@ -1,0 +1,1430 @@
+{
+  "metadata": {
+    "name": "NCERT Class 11 Physics RAG Evaluation Dataset — v2.0 (Fixed Dataset)",
+    "source_dataset": "NCERT_class11_physics_RAG_FIXED.json",
+    "version": "2.0",
+    "total_questions": 60,
+    "chapters_covered": 14,
+    "questions_per_chapter": {
+      "1": 5,
+      "2": 4,
+      "3": 4,
+      "4": 5,
+      "5": 5,
+      "6": 5,
+      "7": 5,
+      "8": 3,
+      "9": 3,
+      "10": 3,
+      "11": 5,
+      "12": 4,
+      "13": 4,
+      "14": 5
+    },
+    "question_type_distribution": {
+      "definition": 15,
+      "factual": 9,
+      "conceptual": 12,
+      "numerical": 13,
+      "reasoning": 9,
+      "multi_step_reasoning": 2
+    },
+    "difficulty_distribution": {
+      "easy": 18,
+      "medium": 32,
+      "hard": 10
+    },
+    "description": "Evaluation dataset for the FIXED NCERT Class 11 Physics RAG dataset. Each question includes reference_chunk_id pointing to the specific chunk that should be retrieved. All reference answers are grounded strictly in NCERT textbook content.",
+    "how_to_use": {
+      "retrieval_eval": "Query RAG with `question`. Check if `reference_chunk_id` is in top-k retrieved chunks → Recall@k.",
+      "answer_eval": "Compare system answer to `reference_answer` using ROUGE-L, BERTScore, or LLM judge.",
+      "key_concept_eval": "Check if all `key_concepts` appear in the system answer.",
+      "grading": "Use `grading_criteria` for human or LLM-based pass/fail grading."
+    },
+    "recommended_metrics": {
+      "Retrieval Recall@5": "Target > 85%",
+      "Answer Faithfulness": "Target > 90%",
+      "Answer Correctness": "Target > 80%",
+      "Key Concept Coverage": "Target > 75%",
+      "Numerical Exact Match": "Target > 75%"
+    }
+  },
+  "questions": [
+    {
+      "id": "EV001",
+      "chapter": 1,
+      "chapter_title": "Units and Measurement",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "Define 'unit' in the context of measurement. What is the difference between fundamental units and derived units?",
+      "reference_answer": "A unit is a certain basic, arbitrarily chosen, internationally accepted reference standard used to measure a physical quantity. The result of measurement is expressed as a number accompanied by a unit. Fundamental (or base) units are units defined for the fundamental base quantities (e.g., metre for length, kilogram for mass). Derived units are combinations of base units used to express all other physical quantities. A complete set of base and derived units forms a system of units.",
+      "key_concepts": [
+        "unit",
+        "fundamental units",
+        "derived units",
+        "system of units"
+      ],
+      "reference_chunk_id": "35fd2be2-e220-4a04-9665-d505699b2a3c",
+      "grading_criteria": "Must define 'unit' as a reference standard; distinguish fundamental from derived; mention the SI system.",
+      "expected_retrieval_keywords": [
+        "unit",
+        "fundamental",
+        "derived units",
+        "system of units"
+      ]
+    },
+    {
+      "id": "EV002",
+      "chapter": 1,
+      "chapter_title": "Units and Measurement",
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Name the seven base quantities in the SI system and their corresponding SI units.",
+      "reference_answer": "The seven SI base quantities and their units are: (1) Length — metre (m), (2) Mass — kilogram (kg), (3) Time — second (s), (4) Electric current — ampere (A), (5) Thermodynamic temperature — kelvin (K), (6) Amount of substance — mole (mol), (7) Luminous intensity — candela (cd).",
+      "key_concepts": [
+        "SI base quantities",
+        "seven base quantities",
+        "metre",
+        "kilogram",
+        "ampere",
+        "kelvin"
+      ],
+      "reference_chunk_id": "55c93b9a-16e9-4980-9462-90f451d544ed",
+      "grading_criteria": "All 7 quantities named with correct units.",
+      "expected_retrieval_keywords": [
+        "SI base quantities",
+        "metre",
+        "kilogram",
+        "second",
+        "ampere",
+        "kelvin"
+      ]
+    },
+    {
+      "id": "EV003",
+      "chapter": 1,
+      "chapter_title": "Units and Measurement",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What are significant figures? State the rules for counting significant figures in a measured quantity.",
+      "reference_answer": "Significant figures are the digits in a measurement that are known reliably, plus the first uncertain digit. Rules: (1) All non-zero digits are significant. (2) Zeros between non-zero digits are significant. (3) Leading zeros are not significant. (4) Trailing zeros in a decimal number are significant. (5) Trailing zeros without a decimal point are ambiguous.",
+      "key_concepts": [
+        "significant figures",
+        "precision",
+        "leading zeros",
+        "trailing zeros"
+      ],
+      "reference_chunk_id": "e3a3dde8-d966-4e99-bfc1-facd15cfce47",
+      "grading_criteria": "Must define significant figures and give at least 3 correct rules.",
+      "expected_retrieval_keywords": [
+        "significant figures",
+        "uncertain digit",
+        "zeros",
+        "precision"
+      ]
+    },
+    {
+      "id": "EV004",
+      "chapter": 1,
+      "chapter_title": "Units and Measurement",
+      "type": "numerical",
+      "difficulty": "medium",
+      "question": "Each side of a cube is measured to be 7.203 m. Calculate the volume of the cube to appropriate significant figures.",
+      "reference_answer": "Volume = (7.203)³ = 373.714... m³. The measured length has 4 significant figures, so volume = 373.7 m³.",
+      "key_concepts": [
+        "significant figures",
+        "volume",
+        "rounding"
+      ],
+      "reference_chunk_id": "994a9938-1353-443c-9c3b-7d40dacf585a",
+      "grading_criteria": "Correct calculation; answer rounded to 4 sig figs: 373.7 m³.",
+      "expected_retrieval_keywords": [
+        "cube",
+        "significant figures",
+        "volume",
+        "7.203"
+      ]
+    },
+    {
+      "id": "EV005",
+      "chapter": 1,
+      "chapter_title": "Units and Measurement",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What is dimensional analysis? Describe two of its main applications.",
+      "reference_answer": "Dimensional analysis uses the principle of homogeneity — all terms in a valid physical equation must have the same dimensions. Applications: (1) Checking correctness of equations. (2) Deriving relationships between physical quantities. (3) Converting units from one system to another.",
+      "key_concepts": [
+        "dimensional analysis",
+        "homogeneity",
+        "checking equations",
+        "converting units"
+      ],
+      "reference_chunk_id": "87c86293-3485-4682-b4e8-789507a3ae63",
+      "grading_criteria": "Must explain homogeneity and give at least 2 valid applications.",
+      "expected_retrieval_keywords": [
+        "dimensional analysis",
+        "homogeneity",
+        "dimensions",
+        "applications"
+      ]
+    },
+    {
+      "id": "EV006",
+      "chapter": 2,
+      "chapter_title": "Motion in a Straight Line",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "Distinguish between distance and displacement. Can displacement be zero when distance is non-zero?",
+      "reference_answer": "Distance is the total path length traversed, always positive and scalar. Displacement is the shortest straight-line distance from initial to final position with direction; it is a vector. Displacement can be zero when distance is non-zero — e.g., completing a round trip returns to the start point, so displacement = 0 but distance > 0.",
+      "key_concepts": [
+        "distance",
+        "displacement",
+        "scalar",
+        "vector",
+        "path length"
+      ],
+      "reference_chunk_id": "71035057-20d2-4b61-973b-8ce9b3158550",
+      "grading_criteria": "Clearly distinguish scalar vs vector nature; correct example of zero displacement with non-zero distance.",
+      "expected_retrieval_keywords": [
+        "displacement",
+        "distance",
+        "path length",
+        "position"
+      ]
+    },
+    {
+      "id": "EV007",
+      "chapter": 2,
+      "chapter_title": "Motion in a Straight Line",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What does the slope and the area under a velocity-time graph represent?",
+      "reference_answer": "Slope of a v-t graph = Δv/Δt = instantaneous acceleration. Positive slope = positive acceleration; negative slope = deceleration. Area under the v-t curve between two instants = displacement during that interval. Area above time axis = positive displacement; below = negative displacement.",
+      "key_concepts": [
+        "velocity-time graph",
+        "slope",
+        "acceleration",
+        "area",
+        "displacement"
+      ],
+      "reference_chunk_id": "f5d3209e-552f-4734-b23d-12300592035a",
+      "grading_criteria": "Slope = acceleration AND area = displacement both correctly stated.",
+      "expected_retrieval_keywords": [
+        "velocity-time graph",
+        "slope",
+        "area",
+        "displacement",
+        "acceleration"
+      ]
+    },
+    {
+      "id": "EV008",
+      "chapter": 2,
+      "chapter_title": "Motion in a Straight Line",
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Write the three equations of motion for uniformly accelerated motion and define all terms.",
+      "reference_answer": "(1) v = v₀ + at; (2) x = v₀t + ½at²; (3) v² = v₀² + 2ax. Here v₀ = initial velocity, v = final velocity, a = uniform acceleration, t = elapsed time, x = displacement.",
+      "key_concepts": [
+        "equations of motion",
+        "kinematic equations",
+        "uniform acceleration"
+      ],
+      "reference_chunk_id": "f5d3209e-552f-4734-b23d-12300592035a",
+      "grading_criteria": "All three equations correctly stated with all variables defined.",
+      "expected_retrieval_keywords": [
+        "kinematic equations",
+        "uniformly accelerated",
+        "v = v₀ + at"
+      ]
+    },
+    {
+      "id": "EV009",
+      "chapter": 2,
+      "chapter_title": "Motion in a Straight Line",
+      "type": "numerical",
+      "difficulty": "medium",
+      "question": "A ball is thrown vertically upward with velocity 20 m/s. Find (a) the maximum height reached and (b) the time to reach maximum height. (g = 10 m/s²)",
+      "reference_answer": "(a) At max height v=0. v² = v₀² - 2gh → 0 = 400 - 20h → h = 20 m. (b) v = v₀ - gt → 0 = 20 - 10t → t = 2 s.",
+      "key_concepts": [
+        "vertical motion",
+        "maximum height",
+        "free fall"
+      ],
+      "reference_chunk_id": "6c1c1b90-5b6f-4681-a8be-b83cfea1e1d9",
+      "grading_criteria": "h = 20 m and t = 2 s with correct working.",
+      "expected_retrieval_keywords": [
+        "vertically upward",
+        "maximum height",
+        "g = 10",
+        "free fall"
+      ]
+    },
+    {
+      "id": "EV010",
+      "chapter": 3,
+      "chapter_title": "Motion in a Plane",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "What is the difference between a scalar and a vector quantity? Give two examples of each.",
+      "reference_answer": "Scalar: only magnitude (e.g., mass, temperature). Vector: magnitude + direction (e.g., displacement, velocity, force). Scalars obey ordinary algebra; vectors obey vector addition laws.",
+      "key_concepts": [
+        "scalar",
+        "vector",
+        "magnitude",
+        "direction"
+      ],
+      "reference_chunk_id": "617cd3cb-b5dc-4ccd-b450-32971ffc1a87",
+      "grading_criteria": "Correct distinction with valid examples.",
+      "expected_retrieval_keywords": [
+        "scalar",
+        "vector",
+        "magnitude",
+        "direction",
+        "examples"
+      ]
+    },
+    {
+      "id": "EV011",
+      "chapter": 3,
+      "chapter_title": "Motion in a Plane",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "State the triangle law and parallelogram law of vector addition.",
+      "reference_answer": "Triangle law: Two vectors placed head-to-tail; the vector from the tail of the first to the head of the second is the resultant. Parallelogram law: Two vectors placed as adjacent sides of a parallelogram; the diagonal from the common point is the resultant.",
+      "key_concepts": [
+        "triangle law",
+        "parallelogram law",
+        "vector addition",
+        "resultant"
+      ],
+      "reference_chunk_id": "dcac08f4-72e4-49c4-94ab-1671cad61c89",
+      "grading_criteria": "Both laws correctly stated; resultant correctly identified.",
+      "expected_retrieval_keywords": [
+        "triangle law",
+        "parallelogram law",
+        "resultant",
+        "vector addition"
+      ]
+    },
+    {
+      "id": "EV012",
+      "chapter": 3,
+      "chapter_title": "Motion in a Plane",
+      "type": "reasoning",
+      "difficulty": "medium",
+      "question": "Show that the trajectory of a projectile is parabolic.",
+      "reference_answer": "x = v₀cosθ · t, so t = x/(v₀cosθ). y = v₀sinθ · t - ½gt². Substituting: y = (tanθ)x - g/(2v₀²cos²θ)·x², which is y = ax - bx² — a parabola.",
+      "key_concepts": [
+        "projectile motion",
+        "parabola",
+        "trajectory",
+        "tanθ"
+      ],
+      "reference_chunk_id": "070e6e2a-f553-4d76-aaba-fe986484c33f",
+      "grading_criteria": "Must derive y = ax - bx² by eliminating t.",
+      "expected_retrieval_keywords": [
+        "projectile motion",
+        "parabola",
+        "trajectory",
+        "tanθ"
+      ]
+    },
+    {
+      "id": "EV013",
+      "chapter": 3,
+      "chapter_title": "Motion in a Plane",
+      "type": "numerical",
+      "difficulty": "hard",
+      "question": "A projectile is launched at 30° with initial speed 40 m/s. Find range, maximum height, and time of flight. (g = 10 m/s²)",
+      "reference_answer": "R = v₀²sin2θ/g = 1600×sin60°/10 = 138.6 m. H = v₀²sin²θ/2g = 1600×0.25/20 = 20 m. T = 2v₀sinθ/g = 2×40×0.5/10 = 4 s.",
+      "key_concepts": [
+        "range",
+        "maximum height",
+        "time of flight",
+        "projectile motion"
+      ],
+      "reference_chunk_id": "69f29dc7-5af1-4a18-917e-ffae0833b019",
+      "grading_criteria": "R ≈ 138.6 m, H = 20 m, T = 4 s.",
+      "expected_retrieval_keywords": [
+        "projectile range",
+        "maximum height",
+        "time of flight",
+        "formula"
+      ]
+    },
+    {
+      "id": "EV014",
+      "chapter": 4,
+      "chapter_title": "Laws of Motion",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "State Newton's three laws of motion.",
+      "reference_answer": "First Law: A body remains at rest or uniform motion unless acted on by a net external force (law of inertia). Second Law: F = dp/dt = ma (net force = rate of change of momentum). Third Law: Every action has an equal and opposite reaction; forces always occur in pairs on different bodies.",
+      "key_concepts": [
+        "Newton's first law",
+        "Newton's second law",
+        "Newton's third law",
+        "inertia",
+        "momentum"
+      ],
+      "reference_chunk_id": "65313575-dbfc-4181-b46f-89894e5afa02",
+      "grading_criteria": "All three laws correctly stated.",
+      "expected_retrieval_keywords": [
+        "Newton's laws",
+        "inertia",
+        "momentum",
+        "action reaction"
+      ]
+    },
+    {
+      "id": "EV015",
+      "chapter": 4,
+      "chapter_title": "Laws of Motion",
+      "type": "reasoning",
+      "difficulty": "medium",
+      "question": "Why does a cricket player lower their hands while catching a ball? Explain using Newton's second law.",
+      "reference_answer": "By extending the catching motion, the player increases the time Δt over which the ball decelerates to zero. From F = Δp/Δt, since momentum change is fixed, a larger Δt means smaller force F — reducing injury risk. This applies the impulse-momentum theorem.",
+      "key_concepts": [
+        "impulse",
+        "momentum change",
+        "force-time relationship",
+        "Newton's second law"
+      ],
+      "reference_chunk_id": "3dec5a8a-abfa-4656-a4c9-7577314c75c9",
+      "grading_criteria": "Must use F = Δp/Δt and explain that increasing time reduces force.",
+      "expected_retrieval_keywords": [
+        "catching ball",
+        "impulse",
+        "momentum",
+        "time",
+        "force"
+      ]
+    },
+    {
+      "id": "EV016",
+      "chapter": 4,
+      "chapter_title": "Laws of Motion",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "State the law of conservation of linear momentum and the condition for it to hold.",
+      "reference_answer": "If net external force on a system is zero, total linear momentum is conserved: p_total = constant. Follows from F = dp/dt; if F = 0, p is constant. Holds for isolated systems; internal Newton's third law force pairs cancel.",
+      "key_concepts": [
+        "conservation of momentum",
+        "isolated system",
+        "net external force"
+      ],
+      "reference_chunk_id": "00cbb79c-bcf6-4755-826e-19dab5fbcd81",
+      "grading_criteria": "Correct condition (zero net external force); explanation via Newton's laws.",
+      "expected_retrieval_keywords": [
+        "conservation of momentum",
+        "isolated system",
+        "external force"
+      ]
+    },
+    {
+      "id": "EV017",
+      "chapter": 4,
+      "chapter_title": "Laws of Motion",
+      "type": "numerical",
+      "difficulty": "medium",
+      "question": "A 5 kg block on a rough horizontal surface has μₖ = 0.3 and has a 25 N horizontal force applied. Find acceleration. (g = 10 m/s²)",
+      "reference_answer": "N = mg = 50 N. Friction f = μₖN = 15 N. Net force = 25 - 15 = 10 N. a = F_net/m = 10/5 = 2 m/s².",
+      "key_concepts": [
+        "friction",
+        "kinetic friction",
+        "net force",
+        "Newton's second law"
+      ],
+      "reference_chunk_id": "53bc8ff5-ec98-43da-bd44-c7c491e6dc4e",
+      "grading_criteria": "N=50N, f=15N, a=2 m/s².",
+      "expected_retrieval_keywords": [
+        "kinetic friction",
+        "coefficient of friction",
+        "normal force",
+        "acceleration"
+      ]
+    },
+    {
+      "id": "EV018",
+      "chapter": 5,
+      "chapter_title": "Work, Energy and Power",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "Define work done by a force. When is work done zero even if force and displacement are both non-zero?",
+      "reference_answer": "Work W = F·d = Fd cosθ. Work is zero when θ = 90° — force perpendicular to displacement. Examples: centripetal force, normal force on horizontal motion.",
+      "key_concepts": [
+        "work",
+        "dot product",
+        "perpendicular force",
+        "zero work"
+      ],
+      "reference_chunk_id": "505041a0-f513-4d4e-874a-e7731f7a9132",
+      "grading_criteria": "Correct formula W = Fd cosθ; θ = 90° gives zero work.",
+      "expected_retrieval_keywords": [
+        "work done",
+        "force",
+        "displacement",
+        "cosθ",
+        "perpendicular"
+      ]
+    },
+    {
+      "id": "EV019",
+      "chapter": 5,
+      "chapter_title": "Work, Energy and Power",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "State the work-energy theorem. Is it valid only for constant forces?",
+      "reference_answer": "W_net = ΔKE = ½mv² - ½mv₀². Valid for both constant and variable forces — the calculus proof W = ∫F dx = Δ(½mv²) holds for any force.",
+      "key_concepts": [
+        "work-energy theorem",
+        "kinetic energy",
+        "net work",
+        "variable force"
+      ],
+      "reference_chunk_id": "a3da0d40-5a7d-44d0-a05b-6df14f427339",
+      "grading_criteria": "Must state W_net = ΔKE and confirm it holds for variable forces.",
+      "expected_retrieval_keywords": [
+        "work-energy theorem",
+        "kinetic energy",
+        "net work"
+      ]
+    },
+    {
+      "id": "EV020",
+      "chapter": 5,
+      "chapter_title": "Work, Energy and Power",
+      "type": "reasoning",
+      "difficulty": "hard",
+      "question": "What is the difference between conservative and non-conservative forces? Why can we define potential energy only for conservative forces?",
+      "reference_answer": "Conservative force: work is path-independent, closed-loop work = 0 (e.g., gravity). Non-conservative: work depends on path, energy dissipated (e.g., friction). Potential energy requires conservative forces because PE is stored energy that can be fully recovered — non-conservative forces dissipate energy irreversibly as heat.",
+      "key_concepts": [
+        "conservative force",
+        "non-conservative force",
+        "potential energy",
+        "path independence"
+      ],
+      "reference_chunk_id": "16923c93-8fe2-4a37-aba4-454ee28ce367",
+      "grading_criteria": "Correct distinction; correct explanation that PE requires reversibility/path independence.",
+      "expected_retrieval_keywords": [
+        "conservative force",
+        "potential energy",
+        "path independent"
+      ]
+    },
+    {
+      "id": "EV021",
+      "chapter": 5,
+      "chapter_title": "Work, Energy and Power",
+      "type": "numerical",
+      "difficulty": "medium",
+      "question": "A 2 kg ball is dropped from rest from height 5 m. Find its kinetic energy and speed just before impact. (g = 10 m/s²)",
+      "reference_answer": "KE = mgh = 2×10×5 = 100 J. Speed v = √(2KE/m) = √(100) = 10 m/s.",
+      "key_concepts": [
+        "conservation of energy",
+        "kinetic energy",
+        "potential energy",
+        "speed"
+      ],
+      "reference_chunk_id": "06a22d35-6566-42b8-88af-1d3a92b20087",
+      "grading_criteria": "KE = 100 J, v = 10 m/s.",
+      "expected_retrieval_keywords": [
+        "conservation of energy",
+        "kinetic energy",
+        "dropped from height"
+      ]
+    },
+    {
+      "id": "EV022",
+      "chapter": 6,
+      "chapter_title": "System of Particles and Rotational Motion",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "What is the centre of mass? Write its mathematical expression for a system of n particles.",
+      "reference_answer": "Centre of mass is the point where the entire mass of a system can be assumed concentrated for translational motion. R_cm = Σmᵢrᵢ / M, where M = total mass.",
+      "key_concepts": [
+        "centre of mass",
+        "weighted average",
+        "total mass"
+      ],
+      "reference_chunk_id": "b895bd79-28fd-4466-9eb0-399c22c6f312",
+      "grading_criteria": "Correct definition and formula R_cm = Σmᵢrᵢ/M.",
+      "expected_retrieval_keywords": [
+        "centre of mass",
+        "weighted average",
+        "formula"
+      ]
+    },
+    {
+      "id": "EV023",
+      "chapter": 6,
+      "chapter_title": "System of Particles and Rotational Motion",
+      "type": "definition",
+      "difficulty": "medium",
+      "question": "Define torque and angular momentum. Write the rotational analogue of Newton's second law.",
+      "reference_answer": "Torque τ = r × F; magnitude = rF sinθ; unit N·m. Angular momentum L = r × p = Iω; unit kg·m²/s. Rotational Newton's second law: τ_net = dL/dt = Iα.",
+      "key_concepts": [
+        "torque",
+        "angular momentum",
+        "moment of inertia",
+        "τ = Iα"
+      ],
+      "reference_chunk_id": "5e1e9edb-cc68-4f95-9b01-f64ad6035c5e",
+      "grading_criteria": "Correct definitions of both; τ = Iα stated.",
+      "expected_retrieval_keywords": [
+        "torque",
+        "angular momentum",
+        "τ = Iα",
+        "cross product"
+      ]
+    },
+    {
+      "id": "EV024",
+      "chapter": 6,
+      "chapter_title": "System of Particles and Rotational Motion",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "State the law of conservation of angular momentum and give a real-world example.",
+      "reference_answer": "If net external torque is zero, L = Iω is conserved. Example: A figure skater pulling arms inward reduces I, so ω increases (spins faster). Also, Kepler's second law (planets sweep equal areas) follows from this conservation.",
+      "key_concepts": [
+        "conservation of angular momentum",
+        "moment of inertia",
+        "angular velocity"
+      ],
+      "reference_chunk_id": "c1d487d1-c371-41ca-9034-a3d17070b66d",
+      "grading_criteria": "Correct statement; valid real-world example.",
+      "expected_retrieval_keywords": [
+        "conservation of angular momentum",
+        "torque",
+        "Iω"
+      ]
+    },
+    {
+      "id": "EV025",
+      "chapter": 6,
+      "chapter_title": "System of Particles and Rotational Motion",
+      "type": "numerical",
+      "difficulty": "hard",
+      "question": "A solid cylinder of mass 4 kg and radius 0.3 m has a torque of 3.6 N·m applied about its central axis. Find moment of inertia and angular acceleration.",
+      "reference_answer": "I = ½MR² = ½×4×0.09 = 0.18 kg·m². α = τ/I = 3.6/0.18 = 20 rad/s².",
+      "key_concepts": [
+        "moment of inertia",
+        "solid cylinder",
+        "angular acceleration",
+        "torque"
+      ],
+      "reference_chunk_id": "2f1fb70f-48da-4ccd-874c-36f70b5cbd13",
+      "grading_criteria": "I = 0.18 kg·m², α = 20 rad/s².",
+      "expected_retrieval_keywords": [
+        "moment of inertia",
+        "solid cylinder",
+        "½MR²"
+      ]
+    },
+    {
+      "id": "EV026",
+      "chapter": 7,
+      "chapter_title": "Gravitation",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "State Newton's universal law of gravitation and define G.",
+      "reference_answer": "F = Gm₁m₂/r². G = 6.674 × 10⁻¹¹ N·m²·kg⁻² (universal gravitational constant, measured by Cavendish).",
+      "key_concepts": [
+        "Newton's law of gravitation",
+        "inverse square law",
+        "G"
+      ],
+      "reference_chunk_id": "ceee1a50-204d-4555-b9ce-dbff74b9ffcb",
+      "grading_criteria": "Correct formula; value of G; Cavendish mentioned.",
+      "expected_retrieval_keywords": [
+        "Newton's law of gravitation",
+        "G",
+        "inverse square",
+        "Cavendish"
+      ]
+    },
+    {
+      "id": "EV027",
+      "chapter": 7,
+      "chapter_title": "Gravitation",
+      "type": "factual",
+      "difficulty": "medium",
+      "question": "State Kepler's three laws of planetary motion.",
+      "reference_answer": "(1) Law of Ellipses: planets orbit Sun in ellipses with Sun at one focus. (2) Law of Areas: the radius vector sweeps equal areas in equal times. (3) Law of Periods: T² ∝ a³ (period squared proportional to semi-major axis cubed).",
+      "key_concepts": [
+        "Kepler's first law",
+        "Kepler's second law",
+        "Kepler's third law",
+        "ellipse",
+        "T² ∝ a³"
+      ],
+      "reference_chunk_id": "f05ecc3d-2008-42d3-9544-e881d470d0ca",
+      "grading_criteria": "All three laws correctly stated.",
+      "expected_retrieval_keywords": [
+        "Kepler's laws",
+        "ellipse",
+        "equal areas",
+        "T² proportional a³"
+      ]
+    },
+    {
+      "id": "EV028",
+      "chapter": 7,
+      "chapter_title": "Gravitation",
+      "type": "numerical",
+      "difficulty": "hard",
+      "question": "Calculate the escape speed from Earth's surface. (R_E = 6.4 × 10⁶ m, g = 9.8 m/s²)",
+      "reference_answer": "v_e = √(2gR_E) = √(2×9.8×6.4×10⁶) ≈ 11,200 m/s = 11.2 km/s.",
+      "key_concepts": [
+        "escape speed",
+        "gravitational potential energy",
+        "surface of Earth"
+      ],
+      "reference_chunk_id": "848c33dd-8759-467f-9ff1-97996491e357",
+      "grading_criteria": "Formula v_e = √(2gR); answer ≈ 11.2 km/s.",
+      "expected_retrieval_keywords": [
+        "escape speed",
+        "escape velocity",
+        "√2gR"
+      ]
+    },
+    {
+      "id": "EV029",
+      "chapter": 7,
+      "chapter_title": "Gravitation",
+      "type": "reasoning",
+      "difficulty": "medium",
+      "question": "How does g vary with (a) altitude above Earth and (b) depth below Earth's surface?",
+      "reference_answer": "(a) Above: g' ≈ g(1 - 2h/R) for h << R; decreases with altitude (inverse square law). (b) Below: g' = g(1 - d/R); decreases linearly with depth; g = 0 at Earth's centre.",
+      "key_concepts": [
+        "acceleration due to gravity",
+        "altitude",
+        "depth variation"
+      ],
+      "reference_chunk_id": "95b71af4-aeac-47bf-bcf2-a24ee4a9abcf",
+      "grading_criteria": "Correct formula for altitude AND depth; g=0 at centre.",
+      "expected_retrieval_keywords": [
+        "acceleration due to gravity",
+        "altitude",
+        "depth",
+        "variation"
+      ]
+    },
+    {
+      "id": "EV030",
+      "chapter": 8,
+      "chapter_title": "Mechanical Properties of Solids",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "Define stress and strain. State Hooke's law.",
+      "reference_answer": "Stress = F/A (restoring force per unit area); unit: Pa. Strain = ΔL/L (dimensionless ratio of change to original dimension). Hooke's law: within elastic limit, Stress ∝ Strain (Stress = E × Strain).",
+      "key_concepts": [
+        "stress",
+        "strain",
+        "Hooke's law",
+        "elastic limit"
+      ],
+      "reference_chunk_id": "2bfa967a-13dd-46dd-b288-b1194a263f19",
+      "grading_criteria": "Correct definitions (F/A and ΔL/L); Hooke's law with elastic limit.",
+      "expected_retrieval_keywords": [
+        "stress",
+        "strain",
+        "Hooke's law",
+        "elastic limit"
+      ]
+    },
+    {
+      "id": "EV031",
+      "chapter": 8,
+      "chapter_title": "Mechanical Properties of Solids",
+      "type": "definition",
+      "difficulty": "medium",
+      "question": "Define Young's modulus, shear modulus, and bulk modulus.",
+      "reference_answer": "Young's modulus Y = (F/A)/(ΔL/L) = FL/AΔL. Shear modulus G = (F/A)/(Δx/L). Bulk modulus B = -p/(ΔV/V). All have unit N/m² (Pa).",
+      "key_concepts": [
+        "Young's modulus",
+        "shear modulus",
+        "bulk modulus",
+        "elastic moduli"
+      ],
+      "reference_chunk_id": "48bce5e6-f0a7-4666-87d1-93bbf9bffa9a",
+      "grading_criteria": "All three moduli defined with formulas.",
+      "expected_retrieval_keywords": [
+        "Young's modulus",
+        "shear modulus",
+        "bulk modulus",
+        "elastic moduli"
+      ]
+    },
+    {
+      "id": "EV032",
+      "chapter": 8,
+      "chapter_title": "Mechanical Properties of Solids",
+      "type": "numerical",
+      "difficulty": "medium",
+      "question": "A wire of length 3 m and area 1 × 10⁻⁶ m² is stretched 1 mm by a force of 100 N. Calculate Young's modulus.",
+      "reference_answer": "Y = FL/(AΔL) = (100×3)/(10⁻⁶×10⁻³) = 300/10⁻⁹ = 3 × 10¹¹ Pa.",
+      "key_concepts": [
+        "Young's modulus",
+        "elongation",
+        "cross-sectional area"
+      ],
+      "reference_chunk_id": "8b5fbb23-09ea-4286-a04b-ddabf8ab8bb5",
+      "grading_criteria": "Y = 3 × 10¹¹ Pa with correct formula.",
+      "expected_retrieval_keywords": [
+        "Young's modulus",
+        "wire",
+        "elongation",
+        "FL/AΔL"
+      ]
+    },
+    {
+      "id": "EV033",
+      "chapter": 9,
+      "chapter_title": "Mechanical Properties of Fluids",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "Define pressure. State Pascal's law and give one application.",
+      "reference_answer": "Pressure P = F/A; unit Pa. Pascal's law: pressure applied to enclosed fluid is transmitted undiminished in all directions. Application: hydraulic press / hydraulic brakes.",
+      "key_concepts": [
+        "pressure",
+        "Pascal's law",
+        "hydraulic press",
+        "enclosed fluid"
+      ],
+      "reference_chunk_id": "5699f8f0-416a-497f-8d04-1d0b60df9c7f",
+      "grading_criteria": "Correct definition; Pascal's law; hydraulic application.",
+      "expected_retrieval_keywords": [
+        "Pascal's law",
+        "pressure",
+        "enclosed fluid",
+        "hydraulic"
+      ]
+    },
+    {
+      "id": "EV034",
+      "chapter": 9,
+      "chapter_title": "Mechanical Properties of Fluids",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "State Bernoulli's principle and explain how it accounts for lift on an aircraft wing.",
+      "reference_answer": "Bernoulli: P + ½ρv² + ρgh = const along a streamline. For an aircraft wing, air moves faster over the curved upper surface → lower pressure above, higher pressure below → net upward lift force.",
+      "key_concepts": [
+        "Bernoulli's principle",
+        "lift",
+        "pressure-velocity relationship"
+      ],
+      "reference_chunk_id": "92fa5318-5a22-45ab-9ccf-86745a71cbcf",
+      "grading_criteria": "Correct equation; faster flow → lower pressure → upward lift.",
+      "expected_retrieval_keywords": [
+        "Bernoulli's principle",
+        "aircraft lift",
+        "pressure",
+        "velocity"
+      ]
+    },
+    {
+      "id": "EV035",
+      "chapter": 9,
+      "chapter_title": "Mechanical Properties of Fluids",
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "State Archimedes' principle. What is the condition for a body to float?",
+      "reference_answer": "Archimedes' principle: a submerged body experiences upward buoyant force = weight of fluid displaced (F_b = ρ_fluid × V_sub × g). Body floats when F_b = weight, i.e., average density of body ≤ density of fluid.",
+      "key_concepts": [
+        "Archimedes' principle",
+        "buoyancy",
+        "floating condition",
+        "density"
+      ],
+      "reference_chunk_id": "74952e23-b88f-423d-bbbf-1520fb3db6dc",
+      "grading_criteria": "Correct principle; correct floating condition.",
+      "expected_retrieval_keywords": [
+        "Archimedes' principle",
+        "buoyancy",
+        "floating",
+        "displaced fluid"
+      ]
+    },
+    {
+      "id": "EV036",
+      "chapter": 10,
+      "chapter_title": "Thermal Properties of Matter",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "Distinguish between specific heat capacity and latent heat.",
+      "reference_answer": "Specific heat capacity c: Q = mcΔT — heat to raise temperature of 1 kg by 1 K. Latent heat L: Q = mL — heat to change phase of 1 kg at constant temperature (no temperature change).",
+      "key_concepts": [
+        "specific heat capacity",
+        "latent heat",
+        "phase change",
+        "temperature change"
+      ],
+      "reference_chunk_id": "3229441f-4137-4b88-a6c5-8062d565c67b",
+      "grading_criteria": "Specific heat → temperature change; latent heat → phase change at constant T.",
+      "expected_retrieval_keywords": [
+        "specific heat capacity",
+        "latent heat",
+        "phase change"
+      ]
+    },
+    {
+      "id": "EV037",
+      "chapter": 10,
+      "chapter_title": "Thermal Properties of Matter",
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Name and briefly describe the three modes of heat transfer.",
+      "reference_answer": "(1) Conduction: heat flows through material by molecular collisions, no bulk motion. (2) Convection: heat transfer by bulk movement of heated fluid. (3) Radiation: heat transfer by electromagnetic waves (infrared), no medium needed.",
+      "key_concepts": [
+        "conduction",
+        "convection",
+        "radiation",
+        "heat transfer"
+      ],
+      "reference_chunk_id": "f50fe9dd-84bb-4870-8cf7-f4274c14bd1c",
+      "grading_criteria": "All three modes named and correctly described.",
+      "expected_retrieval_keywords": [
+        "conduction",
+        "convection",
+        "radiation",
+        "heat transfer"
+      ]
+    },
+    {
+      "id": "EV038",
+      "chapter": 10,
+      "chapter_title": "Thermal Properties of Matter",
+      "type": "numerical",
+      "difficulty": "medium",
+      "question": "100 g of water at 90°C is mixed with 150 g of water at 30°C. Find the final temperature.",
+      "reference_answer": "Heat balance: 0.1(90-T_f) = 0.15(T_f-30) → 9-0.1T_f = 0.15T_f-4.5 → 13.5 = 0.25T_f → T_f = 54°C.",
+      "key_concepts": [
+        "calorimetry",
+        "thermal equilibrium",
+        "heat balance"
+      ],
+      "reference_chunk_id": "618d116d-6f5a-466b-b9b8-fc3576096fd4",
+      "grading_criteria": "T_f = 54°C with correct heat balance equation.",
+      "expected_retrieval_keywords": [
+        "calorimetry",
+        "heat balance",
+        "mixing water",
+        "equilibrium temperature"
+      ]
+    },
+    {
+      "id": "EV039",
+      "chapter": 11,
+      "chapter_title": "Thermodynamics",
+      "type": "definition",
+      "difficulty": "medium",
+      "question": "State the first law of thermodynamics. What is internal energy?",
+      "reference_answer": "First law: ΔU = Q - W. Internal energy U is the total molecular energy stored in the system (kinetic + potential of all molecules). It is a state function — depends only on thermodynamic state, not on how it was reached.",
+      "key_concepts": [
+        "first law of thermodynamics",
+        "internal energy",
+        "heat",
+        "work",
+        "state function"
+      ],
+      "reference_chunk_id": "1c32b3d1-04d4-4afd-873f-6e1fe90c605a",
+      "grading_criteria": "ΔU = Q - W; internal energy explained as state function.",
+      "expected_retrieval_keywords": [
+        "first law thermodynamics",
+        "internal energy",
+        "ΔU = Q - W"
+      ]
+    },
+    {
+      "id": "EV040",
+      "chapter": 11,
+      "chapter_title": "Thermodynamics",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Compare isothermal and adiabatic processes for an ideal gas.",
+      "reference_answer": "Isothermal: ΔT=0, ΔU=0, Q=W, PV=const (slow process). Adiabatic: Q=0, ΔU=-W, PVγ=const (fast process, temperature changes).",
+      "key_concepts": [
+        "isothermal",
+        "adiabatic",
+        "PV = constant",
+        "PVγ = constant",
+        "γ"
+      ],
+      "reference_chunk_id": "f541e00c-9551-47ae-8053-f3402164369b",
+      "grading_criteria": "Correct comparison of Q, ΔU, W for each; PV const vs PVγ const.",
+      "expected_retrieval_keywords": [
+        "isothermal",
+        "adiabatic",
+        "PVγ",
+        "ideal gas"
+      ]
+    },
+    {
+      "id": "EV041",
+      "chapter": 11,
+      "chapter_title": "Thermodynamics",
+      "type": "factual",
+      "difficulty": "medium",
+      "question": "State the second law of thermodynamics — both Kelvin-Planck and Clausius statements.",
+      "reference_answer": "Kelvin-Planck: No engine can convert heat from a single reservoir entirely into work. Clausius: Heat cannot flow spontaneously from cold to hot body without external work. Both statements are equivalent.",
+      "key_concepts": [
+        "second law",
+        "Kelvin-Planck",
+        "Clausius",
+        "equivalence"
+      ],
+      "reference_chunk_id": "f0a6b108-a4d1-4543-869a-acef6c993185",
+      "grading_criteria": "Both statements correctly given; equivalence confirmed.",
+      "expected_retrieval_keywords": [
+        "second law thermodynamics",
+        "Kelvin-Planck",
+        "Clausius statement"
+      ]
+    },
+    {
+      "id": "EV042",
+      "chapter": 11,
+      "chapter_title": "Thermodynamics",
+      "type": "numerical",
+      "difficulty": "hard",
+      "question": "A Carnot engine works between 600 K and 300 K and absorbs 1000 J per cycle. Find efficiency, work done, and heat rejected.",
+      "reference_answer": "η = 1 - T_C/T_H = 1 - 300/600 = 50%. W = ηQ_H = 500 J. Q_C = Q_H - W = 500 J.",
+      "key_concepts": [
+        "Carnot engine",
+        "efficiency",
+        "work per cycle",
+        "heat rejected"
+      ],
+      "reference_chunk_id": "b911f8aa-7630-4bef-9141-92e23be8b467",
+      "grading_criteria": "η = 50%, W = 500 J, Q_C = 500 J.",
+      "expected_retrieval_keywords": [
+        "Carnot engine",
+        "efficiency",
+        "T_C/T_H",
+        "heat rejected"
+      ]
+    },
+    {
+      "id": "EV043",
+      "chapter": 12,
+      "chapter_title": "Kinetic Theory",
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "State the ideal gas equation. What are the key assumptions of kinetic theory for ideal gases?",
+      "reference_answer": "PV = nRT (or PV = NkT). Key assumptions: molecules are point masses, in random motion, collisions perfectly elastic, no intermolecular forces between collisions, molecular size negligible vs separation.",
+      "key_concepts": [
+        "ideal gas equation",
+        "PV = nRT",
+        "kinetic theory assumptions"
+      ],
+      "reference_chunk_id": "7e628523-8ffb-43ba-a342-33657993e5dd",
+      "grading_criteria": "Correct equation; at least 4 assumptions stated.",
+      "expected_retrieval_keywords": [
+        "ideal gas equation",
+        "PV = nRT",
+        "kinetic theory",
+        "assumptions"
+      ]
+    },
+    {
+      "id": "EV044",
+      "chapter": 12,
+      "chapter_title": "Kinetic Theory",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "State the law of equipartition of energy and use it to find Cv for a monatomic ideal gas.",
+      "reference_answer": "Each degree of freedom has average energy ½kT. Monatomic gas has 3 translational DOF → U = 3kT/2 per molecule. Cv = dU/dT per mole = 3R/2 ≈ 12.5 J/mol·K.",
+      "key_concepts": [
+        "equipartition of energy",
+        "degrees of freedom",
+        "Cv",
+        "monatomic gas"
+      ],
+      "reference_chunk_id": "78ef26b4-e490-4377-a0cb-bac33da0d186",
+      "grading_criteria": "Correct law; Cv = 3R/2 derived for monatomic gas.",
+      "expected_retrieval_keywords": [
+        "equipartition of energy",
+        "degrees of freedom",
+        "Cv = 3R/2",
+        "monatomic"
+      ]
+    },
+    {
+      "id": "EV045",
+      "chapter": 12,
+      "chapter_title": "Kinetic Theory",
+      "type": "numerical",
+      "difficulty": "medium",
+      "question": "Find the rms speed of nitrogen molecules at 27°C. (M = 28 g/mol, R = 8.314 J/mol·K)",
+      "reference_answer": "T = 300 K. v_rms = √(3RT/M) = √(3×8.314×300/0.028) ≈ 517 m/s.",
+      "key_concepts": [
+        "rms speed",
+        "kinetic theory",
+        "temperature",
+        "molar mass"
+      ],
+      "reference_chunk_id": "7e628523-8ffb-43ba-a342-33657993e5dd",
+      "grading_criteria": "v_rms ≈ 517 m/s using v_rms = √(3RT/M).",
+      "expected_retrieval_keywords": [
+        "rms speed",
+        "√3RT/M",
+        "nitrogen",
+        "kinetic theory"
+      ]
+    },
+    {
+      "id": "EV046",
+      "chapter": 13,
+      "chapter_title": "Oscillations",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "Define Simple Harmonic Motion. Write the displacement equation and expression for time period.",
+      "reference_answer": "SHM: F = -kx (restoring force proportional to displacement, directed toward equilibrium). x(t) = A cos(ωt + φ). T = 2π/ω = 2π√(m/k).",
+      "key_concepts": [
+        "SHM",
+        "restoring force",
+        "amplitude",
+        "angular frequency",
+        "period"
+      ],
+      "reference_chunk_id": "0bb2bde8-d325-48ff-b185-f7582810e563",
+      "grading_criteria": "F = -kx; x(t) = A cos(ωt + φ); T = 2π√(m/k).",
+      "expected_retrieval_keywords": [
+        "simple harmonic motion",
+        "restoring force",
+        "F = -kx",
+        "amplitude",
+        "angular frequency"
+      ]
+    },
+    {
+      "id": "EV047",
+      "chapter": 13,
+      "chapter_title": "Oscillations",
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the time period of a simple pendulum? On what factors does it depend and what is it independent of?",
+      "reference_answer": "T = 2π√(L/g). Depends on L and g. Independent of: mass of bob, amplitude (for small angles < ~15°), material.",
+      "key_concepts": [
+        "simple pendulum",
+        "time period",
+        "T = 2π√(L/g)",
+        "independent of mass"
+      ],
+      "reference_chunk_id": "44603fae-e70c-44ea-ac88-f466ecaeda5c",
+      "grading_criteria": "Correct formula; mention independence from mass and small-angle condition.",
+      "expected_retrieval_keywords": [
+        "simple pendulum",
+        "time period",
+        "T = 2π√(L/g)",
+        "mass independent"
+      ]
+    },
+    {
+      "id": "EV048",
+      "chapter": 13,
+      "chapter_title": "Oscillations",
+      "type": "numerical",
+      "difficulty": "medium",
+      "question": "A spring of k = 500 N/m has a 200 g mass. Find time period and frequency of oscillation.",
+      "reference_answer": "ω = √(500/0.2) = 50 rad/s. T = 2π/50 ≈ 0.126 s. f = 1/T ≈ 7.96 Hz.",
+      "key_concepts": [
+        "spring-mass system",
+        "time period",
+        "frequency",
+        "angular frequency"
+      ],
+      "reference_chunk_id": "56e4784b-1891-4c25-9562-fb10b5146316",
+      "grading_criteria": "T ≈ 0.126 s, f ≈ 7.96 Hz.",
+      "expected_retrieval_keywords": [
+        "spring mass",
+        "time period",
+        "ω = √(k/m)",
+        "frequency"
+      ]
+    },
+    {
+      "id": "EV049",
+      "chapter": 13,
+      "chapter_title": "Oscillations",
+      "type": "reasoning",
+      "difficulty": "hard",
+      "question": "What is resonance? Why can it be both useful and dangerous? Give one example of each.",
+      "reference_answer": "Resonance: driving frequency = natural frequency → very large amplitude. Useful: radio tuning circuits. Dangerous: Tacoma Narrows Bridge collapse (1940) from wind-driven resonance; soldiers break step on bridges.",
+      "key_concepts": [
+        "resonance",
+        "natural frequency",
+        "driving frequency",
+        "amplitude"
+      ],
+      "reference_chunk_id": "0d66db87-d93d-4f7f-8846-7f05cd242a2c",
+      "grading_criteria": "Correct definition; one useful and one dangerous example.",
+      "expected_retrieval_keywords": [
+        "resonance",
+        "natural frequency",
+        "driving frequency",
+        "Tacoma bridge"
+      ]
+    },
+    {
+      "id": "EV050",
+      "chapter": 14,
+      "chapter_title": "Waves",
+      "type": "definition",
+      "difficulty": "easy",
+      "question": "Distinguish between transverse and longitudinal waves with an example of each.",
+      "reference_answer": "Transverse: particle oscillation ⊥ wave propagation (e.g., string waves, EM waves). Longitudinal: particle oscillation ∥ propagation (e.g., sound in air). Longitudinal waves produce compressions and rarefactions.",
+      "key_concepts": [
+        "transverse wave",
+        "longitudinal wave",
+        "perpendicular",
+        "parallel",
+        "compression",
+        "rarefaction"
+      ],
+      "reference_chunk_id": "f503ded1-2b4f-4c82-9afc-36910a2d4eed",
+      "grading_criteria": "Correct distinction with direction of oscillation; correct examples.",
+      "expected_retrieval_keywords": [
+        "transverse wave",
+        "longitudinal wave",
+        "compression",
+        "rarefaction"
+      ]
+    },
+    {
+      "id": "EV051",
+      "chapter": 14,
+      "chapter_title": "Waves",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Explain the general equation y(x,t) = A sin(kx - ωt), identifying all terms.",
+      "reference_answer": "A = amplitude. k = 2π/λ = wave number. ω = 2πf = angular frequency. (kx - ωt) = phase. Wave speed v = ω/k = λf. Describes wave moving in +x direction.",
+      "key_concepts": [
+        "wave equation",
+        "amplitude",
+        "wave number",
+        "angular frequency",
+        "wave speed"
+      ],
+      "reference_chunk_id": "cdb33c21-8c58-4ca7-a9f0-a8a39646dce2",
+      "grading_criteria": "All terms defined: A, k = 2π/λ, ω = 2πf, v = ω/k = λf.",
+      "expected_retrieval_keywords": [
+        "wave equation",
+        "amplitude",
+        "wave number k",
+        "angular frequency ω",
+        "wave speed"
+      ]
+    },
+    {
+      "id": "EV052",
+      "chapter": 14,
+      "chapter_title": "Waves",
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What are standing waves? How are nodes and antinodes formed?",
+      "reference_answer": "Standing waves: superposition of two identical waves travelling in opposite directions. Nodes: points of zero displacement (destructive interference, always cancel). Antinodes: maximum displacement (constructive interference). Adjacent nodes separated by λ/2.",
+      "key_concepts": [
+        "standing waves",
+        "nodes",
+        "antinodes",
+        "superposition",
+        "interference"
+      ],
+      "reference_chunk_id": "54233c17-8687-44fb-8f79-12e7f06f7822",
+      "grading_criteria": "Formation by superposition; nodes (zero) and antinodes (max) correctly identified; λ/2 spacing.",
+      "expected_retrieval_keywords": [
+        "standing waves",
+        "nodes",
+        "antinodes",
+        "superposition"
+      ]
+    },
+    {
+      "id": "EV053",
+      "chapter": 14,
+      "chapter_title": "Waves",
+      "type": "factual",
+      "difficulty": "medium",
+      "question": "State the Doppler effect and write the formula for observed frequency when both source and observer are moving.",
+      "reference_answer": "Doppler effect: apparent change in frequency due to relative source-observer motion. f_obs = f_source × (v ± v_obs)/(v ∓ v_src). Approaching → higher f (blueshift); receding → lower f (redshift).",
+      "key_concepts": [
+        "Doppler effect",
+        "observed frequency",
+        "source speed",
+        "observer speed"
+      ],
+      "reference_chunk_id": "de034635-e446-4fb8-bd62-37f54f4a2b47",
+      "grading_criteria": "Correct formula with sign conventions; blueshift/redshift noted.",
+      "expected_retrieval_keywords": [
+        "Doppler effect",
+        "observed frequency",
+        "source observer moving",
+        "formula"
+      ]
+    },
+    {
+      "id": "EV054",
+      "chapter": 14,
+      "chapter_title": "Waves",
+      "type": "numerical",
+      "difficulty": "medium",
+      "question": "A 1 m string fixed at both ends vibrates in its 3rd harmonic at wave speed 200 m/s. Find the frequency.",
+      "reference_answer": "λ₃ = 2L/3 = 2/3 m. f₃ = v/λ₃ = 200/(2/3) = 300 Hz.",
+      "key_concepts": [
+        "standing waves on string",
+        "harmonics",
+        "frequency",
+        "wavelength"
+      ],
+      "reference_chunk_id": "13b189cb-9ece-4027-ab09-44e9113d3b6e",
+      "grading_criteria": "f₃ = 300 Hz using λ₃ = 2L/3.",
+      "expected_retrieval_keywords": [
+        "standing waves string",
+        "harmonics",
+        "fixed ends",
+        "frequency"
+      ]
+    },
+    {
+      "id": "EV055",
+      "chapter": 5,
+      "chapter_title": "Work, Energy and Power",
+      "type": "multi_step_reasoning",
+      "difficulty": "hard",
+      "question": "A 3 kg block slides down a frictionless 30° incline of length 4 m. Find: (a) work by gravity, (b) speed at bottom, (c) power delivered by gravity if it takes 2 s. (g = 10 m/s²)",
+      "reference_answer": "h = 4 sin30° = 2 m. (a) W = mgh = 60 J. (b) v = √(2W/m) = √40 ≈ 6.32 m/s. (c) P = W/t = 60/2 = 30 W.",
+      "key_concepts": [
+        "work done by gravity",
+        "kinetic energy",
+        "power",
+        "frictionless incline"
+      ],
+      "reference_chunk_id": "16923c93-8fe2-4a37-aba4-454ee28ce367",
+      "grading_criteria": "W = 60 J, v ≈ 6.32 m/s, P = 30 W.",
+      "expected_retrieval_keywords": [
+        "work done by gravity",
+        "incline",
+        "kinetic energy",
+        "power"
+      ]
+    },
+    {
+      "id": "EV056",
+      "chapter": 4,
+      "chapter_title": "Laws of Motion",
+      "type": "multi_step_reasoning",
+      "difficulty": "hard",
+      "question": "Atwood's machine: masses 4 kg and 6 kg over a frictionless pulley. Find (a) acceleration and (b) string tension. (g = 10 m/s²)",
+      "reference_answer": "(a) a = (m₂-m₁)g/(m₁+m₂) = 2×10/10 = 2 m/s². (b) T = m₁(g+a) = 4×12 = 48 N (verified: T = m₂(g-a) = 6×8 = 48 N).",
+      "key_concepts": [
+        "Atwood's machine",
+        "tension",
+        "acceleration",
+        "Newton's second law"
+      ],
+      "reference_chunk_id": "3f3960a5-498f-4c61-8b57-49d7ad037cb1",
+      "grading_criteria": "a = 2 m/s², T = 48 N with verification.",
+      "expected_retrieval_keywords": [
+        "Atwood's machine",
+        "pulley",
+        "tension",
+        "acceleration"
+      ]
+    },
+    {
+      "id": "EV057",
+      "chapter": 7,
+      "chapter_title": "Gravitation",
+      "type": "reasoning",
+      "difficulty": "hard",
+      "question": "What is a geostationary satellite? Derive the expression for its orbital radius.",
+      "reference_answer": "Geostationary satellite: orbits in equatorial plane with T = 24 h, appears stationary. Derivation: GMm/r² = m(2π/T)²r → r³ = GMT²/4π² → r ≈ 4.2 × 10⁷ m ≈ 42,000 km.",
+      "key_concepts": [
+        "geostationary satellite",
+        "orbital radius",
+        "orbital period",
+        "centripetal force"
+      ],
+      "reference_chunk_id": "3f7ad0f8-22e3-4660-ae72-2553ad81940c",
+      "grading_criteria": "Definition; derivation of r³ = GMT²/4π²; value ≈ 42,000 km.",
+      "expected_retrieval_keywords": [
+        "geostationary satellite",
+        "orbital radius",
+        "period",
+        "equatorial"
+      ]
+    },
+    {
+      "id": "EV058",
+      "chapter": 11,
+      "chapter_title": "Thermodynamics",
+      "type": "reasoning",
+      "difficulty": "hard",
+      "question": "Why is the efficiency of a real heat engine always less than a Carnot engine operating between the same temperatures?",
+      "reference_answer": "Carnot engine uses reversible processes → maximum efficiency η = 1 - T_C/T_H. Real engines have irreversibilities (friction, turbulence, non-quasi-static processes), each generating entropy. By the second law, no engine can exceed Carnot efficiency; irreversibilities always reduce actual efficiency below the ideal.",
+      "key_concepts": [
+        "Carnot efficiency",
+        "irreversibility",
+        "second law",
+        "entropy"
+      ],
+      "reference_chunk_id": "6018a8c6-fea4-4ae3-a025-0b2f3583bcb0",
+      "grading_criteria": "Carnot = reversible; real = irreversible; entropy generation; second law upper bound.",
+      "expected_retrieval_keywords": [
+        "Carnot engine",
+        "irreversibility",
+        "efficiency",
+        "second law"
+      ]
+    },
+    {
+      "id": "EV059",
+      "chapter": 6,
+      "chapter_title": "System of Particles and Rotational Motion",
+      "type": "reasoning",
+      "difficulty": "medium",
+      "question": "State and explain the parallel axis theorem.",
+      "reference_answer": "I = I_cm + Md², where I = moment of inertia about any axis, I_cm = moment about parallel axis through centre of mass, M = total mass, d = perpendicular distance between axes.",
+      "key_concepts": [
+        "parallel axis theorem",
+        "moment of inertia",
+        "I = I_cm + Md²",
+        "centre of mass"
+      ],
+      "reference_chunk_id": "4805b79f-3748-43a0-8b01-093eef2c9e33",
+      "grading_criteria": "Correct theorem I = I_cm + Md²; d identified as distance between parallel axes.",
+      "expected_retrieval_keywords": [
+        "parallel axis theorem",
+        "I = I_cm + Md²",
+        "moment of inertia"
+      ]
+    },
+    {
+      "id": "EV060",
+      "chapter": 12,
+      "chapter_title": "Kinetic Theory",
+      "type": "reasoning",
+      "difficulty": "medium",
+      "question": "Using kinetic theory, explain why pressure of an ideal gas increases with temperature at constant volume.",
+      "reference_answer": "P = (1/3)ρv²_rms. Since ½mv²_rms = 3kT/2, v²_rms ∝ T. At constant V, higher T → higher molecular speeds → more frequent, harder wall collisions → higher pressure. Thus P ∝ T (Gay-Lussac's law) from kinetic theory.",
+      "key_concepts": [
+        "kinetic theory",
+        "pressure",
+        "temperature",
+        "rms speed",
+        "Gay-Lussac's law"
+      ],
+      "reference_chunk_id": "3743ca35-3717-4f1c-9780-fa488abc3f39",
+      "grading_criteria": "v²_rms ∝ T; increased collision frequency and force; P ∝ T conclusion.",
+      "expected_retrieval_keywords": [
+        "kinetic theory",
+        "pressure temperature",
+        "rms speed",
+        "constant volume"
+      ]
+    }
+  ]
+}
