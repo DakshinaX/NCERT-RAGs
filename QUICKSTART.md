@@ -5,7 +5,7 @@
 ### Step 1: Upload Files
 1. Go to [Google Colab](https://colab.research.google.com/)
 2. Upload `NCERT_Physics_RAG_Colab.ipynb`
-3. Upload `Data.json` and `Evaluation_Set.json` to `/content/`
+3. Upload `Data.json` and `Evaluation_Set.json` (or `Evaluation Set.json`) to `/content/`
 
 ### Step 2: Run the Notebook
 1. Click "Runtime" → "Run all"
