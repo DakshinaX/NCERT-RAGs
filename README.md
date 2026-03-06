@@ -161,7 +161,7 @@ Input Query
 
 1. **Upload files to Colab:**
    - `Data.json` (8.2MB)
-   - `Evaluation_Set.json` (56KB)
+   - `Evaluation_Set.json` (or `Evaluation Set.json`) (56KB)
    - `NCERT_Physics_RAG_Colab.ipynb`
 
 2. **Open notebook in Colab:**
@@ -191,6 +191,7 @@ pip install -r requirements.txt
 # 3. Place data files in project directory
 cp path/to/Data.json .
 cp path/to/Evaluation_Set.json .
+# (If your file is named with a space, use: cp "path/to/Evaluation Set.json" .)
 
 # 4. Run the system
 python ncert_physics_rag_system.py

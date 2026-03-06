@@ -29,6 +29,7 @@ def install_dependencies():
     packages = [
         "transformers==4.36.0",
         "sentence-transformers==2.2.2",
+        "huggingface-hub==0.25.2",  # Compatible with sentence-transformers 2.2.2
         "faiss-cpu==1.7.4",  # Use faiss-gpu if GPU available
         "langchain==0.1.0",
         "langchain-community==0.0.10",
@@ -157,8 +158,37 @@ class DataLoader:
     """Load and preprocess NCERT Physics dataset."""
     
     def __init__(self, data_path: str, eval_path: str):
-        self.data_path = data_path
-        self.eval_path = eval_path
+        self.data_path = self._resolve_path(data_path, ["Data.json"])
+        self.eval_path = self._resolve_path(
+            eval_path,
+            ["Evaluation_Set.json", "Evaluation Set.json"]
+        )
+
+    @staticmethod
+    def _resolve_path(preferred_path: str, fallback_names: List[str]) -> str:
+        """Resolve dataset paths across local/Colab naming variants."""
+        if os.path.exists(preferred_path):
+            return preferred_path
+
+        search_candidates = []
+
+        # Keep directory from preferred path and try known fallback names.
+        preferred_dir = os.path.dirname(preferred_path) or "."
+        for name in fallback_names:
+            search_candidates.append(os.path.join(preferred_dir, name))
+
+        # Also check current working directory (common for local runs).
+        for name in fallback_names:
+            search_candidates.append(name)
+
+        for candidate in search_candidates:
+            if os.path.exists(candidate):
+                print(f"ℹ️ Using detected file path: {candidate}")
+                return candidate
+
+        raise FileNotFoundError(
+            f"Could not find dataset file. Tried: {preferred_path} and {search_candidates}"
+        )
         
     def load_corpus(self) -> Tuple[List[Dict], Dict[str, Any]]:
         """Load the main corpus from Data.json."""
@@ -799,7 +829,7 @@ def main():
 if __name__ == "__main__":
     # Note: In Colab, run main() after uploading files
     print("⚠️  Before running main(), please:")
-    print("1. Upload Data.json and Evaluation_Set.json to /content/")
+    print("1. Upload Data.json and Evaluation_Set.json (or Evaluation Set.json) to /content/")
     print("2. Run: install_dependencies()")
     print("3. Run: rag_pipeline, evaluator, results = main()")
     print("\nOr simply run: python ncert_physics_rag_system.py")

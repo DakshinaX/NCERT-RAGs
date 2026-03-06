@@ -5,6 +5,7 @@
 torch==2.1.2
 transformers==4.36.0
 sentence-transformers==2.2.2
+huggingface-hub==0.25.2  # Keeps compatibility with sentence-transformers==2.2.2
 accelerate==0.25.0
 bitsandbytes==0.41.3
 
